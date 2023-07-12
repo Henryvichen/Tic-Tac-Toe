@@ -24,6 +24,9 @@
   }
   
   .win-message {
+    background-color: white;
+    border-style: solid;
+    font-family: futura;
     color: green;
     font-size: 50px;
     font-weight: bold;
@@ -31,7 +34,20 @@
   }
   
   .lose-message {
+    background-color: white;
+    border-style: solid;
+    font-family: futura;
     color: red;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .tie-message {
+    background-color: white;
+    border-style: solid;
+    font-family: futura;
+    color: blue;
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -48,7 +64,43 @@
   }
 
   #play-again-btn {
+    font-family: futura;
     font-size: 20px;
     padding: 12px 24px;
   }
   
+  .game-title {
+    text-decoration: underline;
+    text-underline-offset: 15px;
+    font-family: futura;
+    text-align: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  .scoreboard {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .player-score, .computer-score {
+    font-size: 40px;
+    margin-right: 20px;
+    background-color: white;
+    border: 4mm ridge rgba(0, 0, 0, 0.6)
+  }
+  
+  .player-score {
+    color: green;
+  }
+  
+  .computer-score {
+    color: red;
+  }
+
+  #reset-btn {
+    font-family: futura;
+    font-size: 25px;
+    padding: 12px 24px;
+  }

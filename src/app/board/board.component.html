@@ -1,8 +1,18 @@
 <div class="board-container">
+  <h1 class="game-title">Tic-Tac-Toe</h1>
   <div class="board">
     <div *ngFor="let square of board; let i = index">
       <app-box [value]="square" (click)="makeMove(i)"></app-box>
     </div>
+  </div>
+  <div class="scoreboard">
+    <div class="player-score">
+      Player Wins: {{ playerWins }}
+    </div>
+    <div class="computer-score">
+      Computer Wins: {{ computerWins }}
+    </div>
+    <button id="reset-btn" (click)="resetWins()">Reset Wins</button>
   </div>
   <div class="message-container">
     <div class="win-message" *ngIf="gameMessage === 'You Win!'">{{ gameMessage }}</div>
