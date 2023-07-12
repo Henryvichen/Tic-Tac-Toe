@@ -7,6 +7,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Sound effects implemented with Howl!
 - Win tracker along with a reset wins button!
 
+  ![SS](https://i.gyazo.com/e96170c612568cfe9be2407b1026cfb4.png)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
