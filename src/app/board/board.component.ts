@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Howl } from 'howler'
 
 @Component({
   selector: 'app-board',
@@ -14,12 +15,18 @@ export class BoardComponent {
   winner: string | null = null;
   playerWins: number = 0;
   computerWins: number = 0;
+  moveSound = new Howl({ src: ['assets/sounds/orb.mp3'] ,volume: 0.5 });
+  winSound = new Howl({ src: ['assets/sounds/ff7.mp3'] ,volume: 0.5});
+  loseSound = new Howl({ src: ['assets/sounds/snakedeath.mp3'] ,volume: 0.5 });
+  tieSound = new Howl({ src: ['assets/sounds/tryagain.mp3'] ,volume: 0.5 });
+  resetSound = new Howl({ src: ['assets/sounds/cheater.mp3'] });
   
 
   makeMove(index: number): void {
     if (!this.board[index] && !this.winner) {
       this.board[index] = this.currentPlayer;
       this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+      this.moveSound.play();
       this.checkWinner();
       this.makeComputerMove();
     }
@@ -103,12 +110,15 @@ export class BoardComponent {
     if (this.winner) {
       if (this.winner === 'X') {
         this.gameMessage = 'You Win!';
+        this.winSound.play()
         this.playerWins++;
       } else if (this.winner === 'O') {
         this.gameMessage = 'You Lose!';
+        this.loseSound.play()
         this.computerWins++;
       } else {
         this.gameMessage = "It's a Tie!";
+        this.tieSound.play()
       }
   
       this.gameOver = true;
@@ -126,5 +136,6 @@ export class BoardComponent {
   resetWins(): void {
     this.computerWins = 0;
     this.playerWins = 0;
+    this.resetSound.play()
   }
 }
