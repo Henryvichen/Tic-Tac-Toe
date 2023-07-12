@@ -1,0 +1,54 @@
+.board-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+  
+
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 20px
+  }
+
+  .message-container {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 24px;
+  }
+  
+  .win-message {
+    color: green;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .lose-message {
+    color: red;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .button-container button {
+    display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  }
+  
+  .button-container button:hover {
+    background-color: #45a049;
+  }
+
+  #play-again-btn {
+    font-size: 20px;
+    padding: 12px 24px;
+  }
+  

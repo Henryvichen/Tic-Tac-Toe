@@ -1,0 +1,13 @@
+<div class="board-container">
+  <div class="board">
+    <div *ngFor="let square of board; let i = index">
+      <app-box [value]="square" (click)="makeMove(i)"></app-box>
+    </div>
+  </div>
+  <div class="message-container">
+    <div class="win-message" *ngIf="gameMessage === 'You Win!'">{{ gameMessage }}</div>
+    <div class="lose-message" *ngIf="gameMessage === 'You Lose!'">{{ gameMessage }}</div>
+    <div class="tie-message" *ngIf="gameMessage === 'It\'s a Tie!'">{{ gameMessage }}</div>
+    <button id="play-again-btn" *ngIf="gameOver" (click)="resetGame()">Play Again</button>
+  </div>
+</div>

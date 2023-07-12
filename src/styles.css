@@ -1,0 +1,12 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background: url('https://i.gyazo.com/b53964eba2763863174fb3f721ad5e0d.png') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+}
