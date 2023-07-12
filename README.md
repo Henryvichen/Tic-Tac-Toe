@@ -1,6 +1,11 @@
 # TicTacToe
-
+A single-player Tic-Tac-Toe game made with Angular.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+## Features
+
+- Easy Mode and Hard mode(minimax)!
+- Sound effects implemented with Howl!
+- Win tracker along with a reset wins button!
 
 ## Development server
 
