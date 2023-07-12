@@ -40,7 +40,7 @@ export class BoardComponent {
         this.board[bestMove.index] = this.currentPlayer;
         this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
         this.checkWinner();
-      }, 500); // Delay to make it look like Computer is "thinking" (optional)
+      }, 50 ); // Delay to make it look like Computer is "thinking" (optional)
     }
   }
 
