@@ -15,7 +15,8 @@ export class BoardComponent {
   winner: string | null = null;
   playerWins: number = 0;
   computerWins: number = 0;
-  moveSound = new Howl({ src: ['assets/sounds/orb.mp3'] ,volume: 0.5 });
+  difficulty: string = 'easy';
+  moveSound = new Howl({ src: ['assets/sounds/orb.mp3'] ,volume: 0.3 });
   winSound = new Howl({ src: ['assets/sounds/ff7.mp3'] ,volume: 0.5});
   loseSound = new Howl({ src: ['assets/sounds/snakedeath.mp3'] ,volume: 0.5 });
   tieSound = new Howl({ src: ['assets/sounds/tryagain.mp3'] ,volume: 0.5 });
@@ -33,6 +34,32 @@ export class BoardComponent {
   }
 
   makeComputerMove(): void {
+    if (!this.winner && this.board.includes(null)) {
+      if (this.difficulty === 'easy') {
+        this.makeEasyComputerMove();
+      } else if (this.difficulty === 'hard') {
+        this.makeHardComputerMove();
+      }
+    }
+  }
+
+  makeEasyComputerMove(): void {
+    
+      let randomIndex: number
+      do {
+        randomIndex = Math.floor(Math.random() * 9)
+      } while (this.board[randomIndex] !== null)
+
+      setTimeout(() => {
+        this.board[randomIndex] = this.currentPlayer;
+        this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+        this.checkWinner();
+      }, 50 ); // Delay to make it look like Computer is "thinking" (optional)
+    }
+    
+  
+
+  makeHardComputerMove(): void {
     if (!this.winner && this.board.includes(null)) {
       const bestMove = this.minimax(this.board, this.currentPlayer);
 
@@ -138,4 +165,9 @@ export class BoardComponent {
     this.playerWins = 0;
     this.resetSound.play()
   }
+
+  setDifficulty(level : string): void {
+    this.difficulty = level
+  }
+  
 }
