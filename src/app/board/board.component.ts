@@ -158,12 +158,19 @@ export class BoardComponent {
     this.winner = null;
     this.gameOver = false;
     this.gameMessage = '';
+
+    setTimeout(() => {
+      // Stop the sounds after a delay
+      this.winSound.stop();
+      this.loseSound.stop();
+      this.tieSound.stop();
+    }, 800);
   }
 
   resetWins(): void {
     this.computerWins = 0;
     this.playerWins = 0;
-    this.resetSound.play()
+    this.resetSound.play();
   }
 
   setDifficulty(level : string): void {
